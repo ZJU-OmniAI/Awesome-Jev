@@ -1,0 +1,16 @@
+name: Correct a claim / 纠正内容
+description: Report an incorrect statement, stale link, translation issue, or attribution problem.
+title: "[Correction] "
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Page and statement / 页面与原句
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and source / 修正内容与来源
+    validations:
+      required: true

@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-27",
+  "provenance": {
+    "en": "Transcribed technical demonstration records. Original HTTP logs are unavailable; these records illustrate response structure and candidate design, without a claim of independent replication or benchmark performance.",
+    "zh": "技术演示记录转录。原始 HTTP 日志不可用；记录用于说明响应结构与候选设计，不构成独立复现或基准成绩。"
+  },
+  "records": [
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "general-four-types",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_General,_front.jpg",
+        "input_dimensions": [
+          480,
+          368
+        ],
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "request_excerpt": {
+        "model": "jev-latest",
+        "state": {
+          "image": "scene"
+        },
+        "questions": {
+          "choice_present": {
+            "type": "choice",
+            "instructions": "What kind of vehicle is the man at the front of in `image`?",
+            "criteria": {
+              "train": "train",
+              "car": "car",
+              "boat": "boat",
+              "airplane": "airplane"
+            }
+          },
+          "choice_missing": {
+            "type": "choice",
+            "instructions": "What kind of vehicle is the man at the front of in `image`?",
+            "criteria": {
+              "car": "car",
+              "boat": "boat",
+              "airplane": "airplane",
+              "bicycle": "bicycle"
+            }
+          },
+          "score": {
+            "type": "score",
+            "instructions": "How many human or humanoid characters are visible in `image`? Count partially visible characters, but do not count statues, animals, or isolated hands.",
+            "criteria": [
+              "No human or humanoid characters",
+              "Exactly one human or humanoid character",
+              "Exactly two human or humanoid characters",
+              "Exactly three human or humanoid characters",
+              "Four or more human or humanoid characters"
+            ]
+          },
+          "noul": {
+            "type": "noul",
+            "instructions": "There is a horse in `image`."
+          },
+          "box": {
+            "type": "box",
+            "instructions": "The entire visible man in the center of `image`."
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "choice_present": {
+            "type": "choice",
+            "choice": "train",
+            "confidence": 0.93,
+            "probabilities": {
+              "train": 0.95,
+              "car": 0.05,
+              "boat": 0,
+              "airplane": 0
+            }
+          },
+          "choice_missing": {
+            "type": "choice",
+            "choice": "car",
+            "confidence": 0.95,
+            "probabilities": {
+              "car": 0.96,
+              "boat": 0.02,
+              "airplane": 0.02,
+              "bicycle": 0
+            }
+          },
+          "score": {
+            "type": "score",
+            "score": 1.09,
+            "confidence": 0.93,
+            "legend": {
+              "0": "No human or humanoid characters",
+              "1": "Exactly one human or humanoid character",
+              "2": "Exactly two human or humanoid characters",
+              "3": "Exactly three human or humanoid characters",
+              "4": "Four or more human or humanoid characters"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.92,
+              "2": 0.07,
+              "3": 0.01,
+              "4": 0
+            }
+          },
+          "noul": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "box": {
+            "type": "box",
+            "box": {
+              "top": 0.05,
+              "bottom": 0.86,
+              "left": 0.28,
+              "right": 0.77
+            },
+            "confidence": 0.87
+          }
+        },
+        "usage": {
+          "input_tokens": 1079,
+          "output_tokens": 140
+        }
+      },
+      "limitations": {
+        "en": "Request excerpt omits image assets. Manual reading only; no independent reference box or IoU. Missing-answer set has no correct candidate.",
+        "zh": "请求摘录省略图像资产。仅人工读图，没有独立真值框或 IoU。缺答案组不存在正确候选。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "kid-small-objects",
+      "shared_call_group": "kid-ten-questions",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still_from_Charles_Chaplin_-_The_Kid_-_1921_-_Charles_Chaplin_Productions_-_EYE_FOT2415.JPG",
+        "input_dimensions": [
+          510,
+          311
+        ],
+        "format": "png",
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "question_pairs": [
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What objects are on the shelf at the upper right of `image`?",
+            "criteria": {
+              "vessels": "A jug and cup or plate-like vessels",
+              "books": "Books",
+              "shoes": "Shoes",
+              "flowers": "Flower pots"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "vessels",
+            "confidence": 1,
+            "probabilities": {
+              "vessels": 1,
+              "books": 0,
+              "shoes": 0,
+              "flowers": 0
+            }
+          }
+        },
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What objects are on the shelf at the upper right of `image`?",
+            "criteria": {
+              "books": "Books",
+              "shoes": "Shoes",
+              "flowers": "Flower pots",
+              "toys": "Toys"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "flowers",
+            "confidence": 0.69,
+            "probabilities": {
+              "books": 0.02,
+              "shoes": 0.04,
+              "flowers": 0.77,
+              "toys": 0.17
+            }
+          }
+        }
+      ],
+      "limitations": {
+        "en": "Two questions extracted from one ten-question request. State only references the image, without movie identity. Display enlargements were not sent. Manual visual reference; no future outcome given. Kinship comparison also changes option count.",
+        "zh": "从同一十题请求摘录两题；共享状态仅引用图像，未透露电影名。展示放大图未额外输入。参考为人工读图，没有未来结果。亲缘关系对照还改变了候选数。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "kid-unreadable-text",
+      "shared_call_group": "kid-ten-questions",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still_from_Charles_Chaplin_-_The_Kid_-_1921_-_Charles_Chaplin_Productions_-_EYE_FOT2415.JPG",
+        "input_dimensions": [
+          510,
+          311
+        ],
+        "format": "png",
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "question_pairs": [
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What is written on the paper notice near the doorway in `image`?",
+            "criteria": {
+              "open": "Open for business",
+              "no_entry": "No entry",
+              "closed": "Closed today",
+              "unreadable": "The text cannot be read from the image"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "unreadable",
+            "confidence": 0.88,
+            "probabilities": {
+              "open": 0.01,
+              "no_entry": 0.02,
+              "closed": 0.06,
+              "unreadable": 0.91
+            }
+          }
+        },
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What is written on the paper notice near the doorway in `image`?",
+            "criteria": {
+              "open": "Open for business",
+              "no_entry": "No entry",
+              "closed": "Closed today",
+              "welcome": "Welcome"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "closed",
+            "confidence": 0.37,
+            "probabilities": {
+              "open": 0.28,
+              "no_entry": 0.13,
+              "closed": 0.53,
+              "welcome": 0.06
+            }
+          }
+        }
+      ],
+      "limitations": {
+        "en": "Two questions extracted from one ten-question request. State only references the image, without movie identity. Display enlargements were not sent. Manual visual reference; no future outcome given. Kinship comparison also changes option count.",
+        "zh": "从同一十题请求摘录两题；共享状态仅引用图像，未透露电影名。展示放大图未额外输入。参考为人工读图，没有未来结果。亲缘关系对照还改变了候选数。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "kid-false-premise",
+      "shared_call_group": "kid-ten-questions",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still_from_Charles_Chaplin_-_The_Kid_-_1921_-_Charles_Chaplin_Productions_-_EYE_FOT2415.JPG",
+        "input_dimensions": [
+          510,
+          311
+        ],
+        "format": "png",
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "question_pairs": [
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What color is the balloon held by the child in `image`?",
+            "criteria": {
+              "red": "Red",
+              "blue": "Blue",
+              "white": "White",
+              "no_balloon": "No balloon is visible in the child's hands"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "no_balloon",
+            "confidence": 0.93,
+            "probabilities": {
+              "red": 0.02,
+              "blue": 0,
+              "white": 0.03,
+              "no_balloon": 0.95
+            }
+          }
+        },
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "What color is the balloon held by the child in `image`?",
+            "criteria": {
+              "red": "Red",
+              "blue": "Blue",
+              "white": "White",
+              "yellow": "Yellow"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "white",
+            "confidence": 0.56,
+            "probabilities": {
+              "red": 0.21,
+              "blue": 0.07,
+              "white": 0.67,
+              "yellow": 0.05
+            }
+          }
+        }
+      ],
+      "limitations": {
+        "en": "Two questions extracted from one ten-question request. State only references the image, without movie identity. Display enlargements were not sent. Manual visual reference; no future outcome given. Kinship comparison also changes option count.",
+        "zh": "从同一十题请求摘录两题；共享状态仅引用图像，未透露电影名。展示放大图未额外输入。参考为人工读图，没有未来结果。亲缘关系对照还改变了候选数。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "kid-outside-image-fact",
+      "shared_call_group": "kid-ten-questions",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still_from_Charles_Chaplin_-_The_Kid_-_1921_-_Charles_Chaplin_Productions_-_EYE_FOT2415.JPG",
+        "input_dimensions": [
+          510,
+          311
+        ],
+        "format": "png",
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "question_pairs": [
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "Based only on visual evidence in `image`, are the two people biological father and son? Do not use movie knowledge or external information.",
+            "criteria": {
+              "yes": "Yes, biological father and son",
+              "no": "No, not biological father and son",
+              "unknown": "Cannot determine from the image alone"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "unknown",
+            "confidence": 0.91,
+            "probabilities": {
+              "yes": 0,
+              "no": 0.06,
+              "unknown": 0.9400000000000001
+            }
+          }
+        },
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "Based only on visual evidence in `image`, are the two people biological father and son? Do not use movie knowledge or external information.",
+            "criteria": {
+              "yes": "Yes, biological father and son",
+              "no": "No, not biological father and son"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "no",
+            "confidence": 0.88,
+            "probabilities": {
+              "yes": 0.06,
+              "no": 0.94
+            }
+          }
+        }
+      ],
+      "limitations": {
+        "en": "Two questions extracted from one ten-question request. State only references the image, without movie identity. Display enlargements were not sent. Manual visual reference; no future outcome given. Kinship comparison also changes option count.",
+        "zh": "从同一十题请求摘录两题；共享状态仅引用图像，未透露电影名。展示放大图未额外输入。参考为人工读图，没有未来结果。亲缘关系对照还改变了候选数。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "kid-next-action",
+      "shared_call_group": "kid-ten-questions",
+      "image": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Still_from_Charles_Chaplin_-_The_Kid_-_1921_-_Charles_Chaplin_Productions_-_EYE_FOT2415.JPG",
+        "input_dimensions": [
+          510,
+          311
+        ],
+        "format": "png",
+        "source_license": "Public domain according to the cited source",
+        "crop": null
+      },
+      "question_pairs": [
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "Based only on `image`, where will the child walk immediately after this moment? Do not use movie knowledge or external information.",
+            "criteria": {
+              "inside": "Into the room",
+              "outside": "Outside the room",
+              "right": "To the right side of the image",
+              "unknown": "Cannot determine from this single image"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "unknown",
+            "confidence": 0.04,
+            "probabilities": {
+              "inside": 0.24,
+              "outside": 0.26,
+              "right": 0.22,
+              "unknown": 0.28
+            }
+          }
+        },
+        {
+          "question": {
+            "type": "choice",
+            "instructions": "Based only on `image`, where will the child walk immediately after this moment? Do not use movie knowledge or external information.",
+            "criteria": {
+              "inside": "Into the room",
+              "outside": "Outside the room",
+              "right": "To the right side of the image",
+              "left": "To the left side of the image"
+            }
+          },
+          "answer": {
+            "type": "choice",
+            "choice": "right",
+            "confidence": 0.09,
+            "probabilities": {
+              "inside": 0.25,
+              "outside": 0.28,
+              "right": 0.32,
+              "left": 0.15
+            }
+          }
+        }
+      ],
+      "limitations": {
+        "en": "Two questions extracted from one ten-question request. State only references the image, without movie identity. Display enlargements were not sent. Manual visual reference; no future outcome given. Kinship comparison also changes option count.",
+        "zh": "从同一十题请求摘录两题；共享状态仅引用图像，未透露电影名。展示放大图未额外输入。参考为人工读图，没有未来结果。亲缘关系对照还改变了候选数。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "bottle-six-questions",
+      "image": {
+        "source_url": "https://github.com/guanxuyu-sv/Visual-Jev/blob/main/assets/figures/demo_bottle.jpg",
+        "input_dimensions": [
+          500,
+          302
+        ],
+        "format": "jpg",
+        "input_bytes": 32869,
+        "recompressed": false
+      },
+      "public_question_definition": {
+        "source_url": "https://github.com/guanxuyu-sv/Visual-Jev/blob/main/code/examples/bottle_questions.json",
+        "reviewed_on": "2026-10-27",
+        "content": {
+          "state": "This image is one item in a visual inventory. Answer each question using the image.",
+          "questions": {
+            "person_present": {
+              "type": "choice",
+              "instructions": "Is there a dog in the image?",
+              "criteria": {
+                "yes": null,
+                "no": null
+              }
+            },
+            "people_count": {
+              "type": "choice",
+              "instructions": "How many dogs are visible?",
+              "criteria": {
+                "one": null,
+                "two": null,
+                "three": null,
+                "none": null
+              }
+            },
+            "sitting_object": {
+              "type": "choice",
+              "instructions": "What is the person sitting on? If this question's premise is false, choose the option that says so.",
+              "criteria": {
+                "bench": null,
+                "chair": null,
+                "ground": null,
+                "incorrect_question": "The premise is false: the image shows a dog, not a person."
+              }
+            },
+            "tree_relation": {
+              "type": "choice",
+              "instructions": "What is in front of the green tree?",
+              "criteria": {
+                "guy": null,
+                "player": null,
+                "lady": null,
+                "bench": null
+              }
+            },
+            "bottle_color": {
+              "type": "choice",
+              "instructions": "What color is the bottle?",
+              "criteria": {
+                "green": null,
+                "clear": null,
+                "red": null,
+                "blue": null
+              }
+            },
+            "red_containers": {
+              "type": "choice",
+              "instructions": "Are there any red bottles or cans?",
+              "criteria": {
+                "no": null,
+                "yes": null
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "person_present": {
+            "type": "choice",
+            "choice": "yes",
+            "confidence": 1,
+            "probabilities": {
+              "yes": 1,
+              "no": 0
+            }
+          },
+          "people_count": {
+            "type": "choice",
+            "choice": "one",
+            "confidence": 0.99,
+            "probabilities": {
+              "one": 0.99,
+              "two": 0.01,
+              "three": 0,
+              "none": 0
+            }
+          },
+          "sitting_object": {
+            "type": "choice",
+            "choice": "incorrect_question",
+            "confidence": 1,
+            "probabilities": {
+              "bench": 0,
+              "chair": 0,
+              "ground": 0,
+              "incorrect_question": 1
+            }
+          },
+          "tree_relation": {
+            "type": "choice",
+            "choice": "bench",
+            "confidence": 1,
+            "probabilities": {
+              "guy": 0,
+              "player": 0,
+              "lady": 0,
+              "bench": 1
+            }
+          },
+          "bottle_color": {
+            "type": "choice",
+            "choice": "green",
+            "confidence": 0.85,
+            "probabilities": {
+              "green": 0.89,
+              "clear": 0.11,
+              "red": 0,
+              "blue": 0
+            }
+          },
+          "red_containers": {
+            "type": "choice",
+            "choice": "no",
+            "confidence": 1,
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 961,
+          "output_tokens": 241
+        }
+      },
+      "limitations": {
+        "en": "The question definition is the public Visual Jev example input, not a recovered full HTTP payload. The incorrect_question option itself discloses dog versus person. Six matching top choices on one image do not establish model superiority or calibration.",
+        "zh": "问题定义来自 Visual Jev 公开示例输入，并非恢复的完整 HTTP 请求。incorrect_question 候选本身提示狗与人的区别。一图六题答案一致不能证明整体优劣或校准。"
+      }
+    },
+    {
+      "date_recorded": "2026-10-27",
+      "requested_model": "jev-latest",
+      "returned_model": "jev-1.14.0",
+      "endpoint": "https://api.typesafe.ai/v1/systemone",
+      "evidence": "demo",
+      "id": "stripe-ticket",
+      "state": "Hi, I've been trying to connect my Stripe account for 3 days and the integration keeps failing. I'm losing sales. Please help ASAP.",
+      "questions": {
+        "department": {
+          "type": "choice",
+          "instructions": "Which team should handle this",
+          "criteria": {
+            "billing": "Payment or subscription issues",
+            "technical": "Bugs or integration problems",
+            "sales": "Pricing or account questions"
+          }
+        },
+        "frustration": {
+          "type": "score",
+          "instructions": "How frustrated the customer appears",
+          "criteria": [
+            "Calm, just stating facts",
+            "Frustrated but civil",
+            "Very angry, strong language"
+          ]
+        },
+        "is_urgent": {
+          "type": "noul",
+          "instructions": "The message conveys urgency or time-sensitivity"
+        }
+      },
+      "response": {
+        "model": "jev-1.14.0",
+        "answers": {
+          "department": {
+            "type": "choice",
+            "choice": "technical",
+            "confidence": 0.72,
+            "probabilities": {
+              "billing": 0.19,
+              "technical": 0.81,
+              "sales": 0
+            }
+          },
+          "frustration": {
+            "type": "score",
+            "score": 1,
+            "confidence": 1,
+            "legend": {
+              "0": "Calm, just stating facts",
+              "1": "Frustrated but civil",
+              "2": "Very angry, strong language"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            }
+          },
+          "is_urgent": {
+            "type": "noul",
+            "noul": 0.99
+          }
+        },
+        "usage": {
+          "input_tokens": 425,
+          "output_tokens": 73
+        }
+      },
+      "limitations": {
+        "en": "One transcribed text demonstration, not an accuracy benchmark. The live Quickstart message may differ.",
+        "zh": "转录的单条文本示例，不是准确率基准。当前 Quickstart 消息可能已不同。"
+      }
+    }
+  ]
+}

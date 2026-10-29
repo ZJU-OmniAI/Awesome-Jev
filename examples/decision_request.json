@@ -1,0 +1,38 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "task": "Move the blue block into the tray.",
+    "observation_id": "illustrative-frame-0042",
+    "observation_age_ms": 80,
+    "observed_facts": [
+      "The gripper rose after closing.",
+      "The block did not move with the gripper.",
+      "The block is still on the table."
+    ],
+    "remaining_plan": "Carry the grasped block to the tray."
+  },
+  "questions": {
+    "next_step": {
+      "type": "choice",
+      "instructions": "Choose what should happen before executing the remaining plan.",
+      "criteria": {
+        "continue": "Continue the existing plan if its assumptions still hold.",
+        "observe": "Obtain another observation if the current evidence is insufficient.",
+        "replan": "Generate a new plan when the existing plan's assumptions contradict the observations."
+      }
+    },
+    "task_progress": {
+      "type": "score",
+      "instructions": "Rate progress toward placing the block in the tray using only the observed facts.",
+      "criteria": [
+        "No verified object progress",
+        "Object transport is in progress",
+        "Object placement in the tray is verified"
+      ]
+    },
+    "grasp_verified": {
+      "type": "noul",
+      "instructions": "The observation supports that the block is held by the gripper."
+    }
+  }
+}

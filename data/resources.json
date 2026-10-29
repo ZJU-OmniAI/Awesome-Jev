@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-29",
+  "resources": [
+    {
+      "id": "jev-introduction",
+      "track": "foundations",
+      "title": "Introducing System One Models & Jev",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "The System One positioning, typed decisions, and vendor descriptions of sampling and RLCD.",
+        "zh": "System One 定位、类型化判断，以及官方对采样与 RLCD 的介绍。"
+      },
+      "scope": {
+        "en": "Architecture and training are vendor descriptions; workflow comparisons are vendor-reported.",
+        "zh": "架构与训练来自官方介绍；工作流对照属于官方自测。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Official launch article dated 2026-09-15, fetched 2026-10-26"
+    },
+    {
+      "id": "quickstart",
+      "track": "foundations",
+      "title": "TypeSafe Quick Start",
+      "url": "https://docs.typesafe.ai/introduction/quickstart",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "State, questions, and typed answers in one request.",
+        "zh": "一次请求中的 State、Questions 与类型化响应。"
+      },
+      "scope": {
+        "en": "Use the current SDK/API documentation for actual integration.",
+        "zh": "实际接入以当前 SDK/API 文档为准。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "state",
+      "track": "foundations",
+      "title": "State",
+      "url": "https://docs.typesafe.ai/concepts/state",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Build shared textual, structured, or image-referencing state for independent questions.",
+        "zh": "为独立问题构造共享文本、结构化内容或图像引用状态。"
+      },
+      "scope": {
+        "en": "Same-request answers are not a sequential reasoning chain.",
+        "zh": "同批问题的答案不构成顺序依赖链。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "State documentation fetched 2026-10-26; image support checked against Images documentation on 2026-10-27"
+    },
+    {
+      "id": "choice",
+      "track": "foundations",
+      "title": "Choice",
+      "url": "https://docs.typesafe.ai/primitives/choice",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Choose among predefined candidates with an option distribution.",
+        "zh": "从预定义候选中选择，并返回选项概率分布。"
+      },
+      "scope": {
+        "en": "Missing candidates cannot be recovered by the selector.",
+        "zh": "选择器不能选出候选集中不存在的动作。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "score",
+      "track": "foundations",
+      "title": "Score",
+      "url": "https://docs.typesafe.ai/primitives/score",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Evaluate an ordered set of levels rather than generate an explanation.",
+        "zh": "在有序等级上作判断，返回等级分布与分数。"
+      },
+      "scope": {
+        "en": "Levels must describe one interpretable dimension.",
+        "zh": "等级应表达同一个可解释维度。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "noul",
+      "track": "foundations",
+      "title": "Noul",
+      "url": "https://docs.typesafe.ai/primitives/noul",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Return a probability for a yes/no proposition.",
+        "zh": "对二值命题返回“是”的概率。"
+      },
+      "scope": {
+        "en": "Thresholds need task-specific validation; no separate native confidence field.",
+        "zh": "阈值需按任务验证；原生响应没有独立 confidence 字段。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "confidence",
+      "track": "foundations",
+      "title": "Confidence",
+      "url": "https://docs.typesafe.ai/confidence",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Explain how Choice and Score confidence is derived from their distributions.",
+        "zh": "解释 Choice 与 Score 的 confidence 如何由概率分布计算。"
+      },
+      "scope": {
+        "en": "Distribution concentration does not guarantee factual correctness or task success.",
+        "zh": "分布集中不保证事实正确或任务成功。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "Official Confidence Markdown fetched 2026-10-27; Choice/Score formulas and derived Noul statistic checked"
+    },
+    {
+      "id": "jev-benchmark",
+      "track": "foundations",
+      "title": "Evaluating and Benchmarking the System One Model Jev",
+      "url": "https://arxiv.org/abs/2609.37647",
+      "evidence": [
+        "paper"
+      ],
+      "summary": {
+        "en": "Independent evaluation across 37 datasets, including accuracy, calibration, and selective prediction.",
+        "zh": "覆盖 37 个数据集的独立评估，讨论准确率、校准和选择性预测。"
+      },
+      "scope": {
+        "en": "Preprint; conclusions depend on model version, prompts, baselines, and answer coverage.",
+        "zh": "预印本；结论受模型版本、提示、基线与回答覆盖率约束。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "images",
+      "track": "foundations",
+      "title": "Images: multimodal state and criteria",
+      "url": "https://docs.typesafe.ai/go/images",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Images in shared state, instructions, and answer criteria; Jev 1.13 and 1.14 support image input.",
+        "zh": "图像进入共享状态、题干与候选；Jev 1.13 和 1.14 均支持图片。"
+      },
+      "scope": {
+        "en": "Experimental; requires the images header and documented image/request limits.",
+        "zh": "实验能力；需启用图像请求头并遵守图像及请求大小限制。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "Official Images Markdown fetched 2026-10-27"
+    },
+    {
+      "id": "box",
+      "track": "foundations",
+      "title": "Box: image localization",
+      "url": "https://docs.typesafe.ai/go/box",
+      "evidence": [
+        "official"
+      ],
+      "summary": {
+        "en": "Jev 1.14 returns one normalized target box per question, alongside confidence.",
+        "zh": "Jev 1.14 每题返回一个目标的归一化边界框及 confidence。"
+      },
+      "scope": {
+        "en": "Experimental; absent targets still produce boxes, so validate presence separately.",
+        "zh": "实验能力；不存在的目标也会返回框，需另做存在性校验。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "Official Box Markdown fetched 2026-10-27"
+    },
+    {
+      "id": "jev-coco-community",
+      "track": "foundations",
+      "title": "Can Jev See? A 48-image COCO evaluation",
+      "url": "https://rohitghumare.com/blog/typesafe-870m-can-jev-see/",
+      "evidence": [
+        "demo"
+      ],
+      "summary": {
+        "en": "Community comparison of image Noul, word/picture Choice, Score, and Box across two Jev versions.",
+        "zh": "社区对照两个 Jev 版本的图像 Noul、文字／图片 Choice、Score 与 Box。"
+      },
+      "scope": {
+        "en": "48 selected images, repeated calls and imperfect labels; author-reported, not a full COCO benchmark.",
+        "zh": "48 张筛选图像、重复调用及不完整标签；作者报告，不是完整 COCO 基准。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "Author report fetched 2026-10-27"
+    },
+    {
+      "id": "openjev",
+      "track": "foundations",
+      "title": "OpenJev",
+      "url": "https://github.com/razorback16/openjev",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Read and normalize candidate-token probabilities at diffusion answer slots using existing weights.",
+        "zh": "使用现成权重，在扩散答案槽读取候选 token 概率并归一化。"
+      },
+      "scope": {
+        "en": "Independent implementation; grouping, rereads, and entropy confidence differ from official Jev.",
+        "zh": "独立实现；问题分组、追加读取及熵置信度与官方 Jev 不同。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "engine.py at b4339c640f5331ef75098637d1be2c787715ee88 fetched 2026-10-27"
+    },
+    {
+      "id": "visual-jev",
+      "track": "foundations",
+      "title": "Visual Jev: code and released adapter",
+      "url": "https://github.com/guanxuyu-sv/Visual-Jev",
+      "evidence": [
+        "project",
+        "paper"
+      ],
+      "summary": {
+        "en": "Qwen3-VL answer-SFT LoRA, existing LM-head readout, and shared visual-prefix batching.",
+        "zh": "Qwen3-VL 答案监督 LoRA、原 LM head 概率读出与视觉前缀共享批处理。"
+      },
+      "scope": {
+        "en": "Community model; quickstart supports Choice with 2–16 options, not the official multimodal API.",
+        "zh": "社区模型；quickstart 支持 2–16 候选的 Choice，不等同官方多模态 API。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "README, bottle question JSON, and 4B adapter model card fetched 2026-10-27"
+    },
+    {
+      "id": "visual-jev-paper",
+      "track": "foundations",
+      "title": "Visual Jev: Accurate and Efficient Decisions from Shared Visual Context",
+      "url": "https://arxiv.org/abs/2609.25845",
+      "evidence": [
+        "paper"
+      ],
+      "summary": {
+        "en": "Separates training accuracy gains from shared-image execution and amortized throughput.",
+        "zh": "区分训练带来的准确率变化与共享图像计算带来的摊销吞吐量变化。"
+      },
+      "scope": {
+        "en": "Four forced-choice tasks, one backbone family, one timing machine; 5.7 ms/question is not request latency.",
+        "zh": "四项候选选择任务、一个模型家族和单机计时；5.7 ms/题不是单次请求延迟。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "Paper results cross-checked against author README/model card fetched 2026-10-27; not an independent rerun"
+    },
+    {
+      "id": "nanojev",
+      "track": "foundations",
+      "title": "NanoJev",
+      "url": "https://github.com/TianyuCodings/NanoJev",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Qwen3-0.6B and a shared decision head jointly trained for four games.",
+        "zh": "共同训练 Qwen3-0.6B 与共享决策头，覆盖四款游戏。"
+      },
+      "scope": {
+        "en": "unified-games-v1 selects step 400; task-specific training and reported tests do not establish a general replacement.",
+        "zh": "unified-games-v1 选用第 400 步权重；专门训练与作者测试不证明通用替代能力。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "README fetched 2026-10-27; unified-games-v1 / hard_lr1e5"
+    },
+    {
+      "id": "clm",
+      "track": "foundations",
+      "title": "Contrastive Language Models (CLM)",
+      "url": "https://github.com/Contrastive-LM/CLM",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Frozen Qwen3-8B plus contrastively trained state/action projections and independently cached candidates.",
+        "zh": "冻结 Qwen3-8B，对比训练状态／动作投影头，并独立缓存候选。"
+      },
+      "scope": {
+        "en": "Text encoder in reviewed release; visual support is roadmap work and reported speedups are task-specific.",
+        "zh": "审阅版本为文本编码器，视觉支持仍属路线图；作者加速比受任务设置限制。"
+      },
+      "reviewed_on": "2026-10-27",
+      "source_snapshot": "README fetched 2026-10-27; public method and evaluation descriptions"
+    },
+    {
+      "id": "jev-ultrafast",
+      "track": "agents",
+      "title": "jev-ultrafast",
+      "url": "https://github.com/browser-use/jev-ultrafast",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Select browser operations and numbered DOM targets; use a separate generator for free text.",
+        "zh": "选择浏览器操作与编号 DOM 目标，自由文本由辅助模型生成。"
+      },
+      "scope": {
+        "en": "One flight-search task and engineering timings do not establish cross-site reliability.",
+        "zh": "单个航班搜索任务与工程计时不足以证明跨网站可靠性。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "computer-use",
+      "track": "agents",
+      "title": "typesafe-computer-use",
+      "url": "https://github.com/awlevin/typesafe-computer-use",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "OCR and accessibility build state; Jev selects an action and target reference.",
+        "zh": "OCR 与辅助功能接口构造状态，Jev 选择动作和目标编号。"
+      },
+      "scope": {
+        "en": "Perception pipelines differ in the reported comparison; compare full-step and task costs.",
+        "zh": "作者对照的感知链路不同，应比较完整单步及任务开销。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "compaction",
+      "track": "agents",
+      "title": "fast-jev-compaction",
+      "url": "https://github.com/tamaratran/fast-jev-compaction",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Use paired retention judgments to keep, truncate, or remove tool interactions.",
+        "zh": "通过调用与结果的保留判断，对工具交互作保留、截短或删除。"
+      },
+      "scope": {
+        "en": "Concept animations and mock demos are not measurements of downstream task quality.",
+        "zh": "概念动画与模拟演示不能作为后续任务质量的实测。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "trader",
+      "track": "agents",
+      "title": "jev-trader",
+      "url": "https://github.com/jarrodwatts/jev-trader",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Study decision freshness in a continuous market-state and execution loop.",
+        "zh": "研究持续市场状态更新与执行循环中的判断时效。"
+      },
+      "scope": {
+        "en": "The reviewed public demo is dry-run/mock; no live-profit claim.",
+        "zh": "所审阅公开演示为 dry-run/mock，不构成实盘收益证据。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "navjev",
+      "track": "embodied",
+      "title": "NavJev",
+      "url": "https://arxiv.org/abs/2609.34969",
+      "evidence": [
+        "paper",
+        "demo"
+      ],
+      "summary": {
+        "en": "Compress visual navigation into action-centered waypoint descriptions and history.",
+        "zh": "将视觉导航压缩为以动作为中心的路点描述与历史。"
+      },
+      "scope": {
+        "en": "Reported 100-task simulation comparison; input design and non-reasoning baselines matter.",
+        "zh": "作者报告的百任务仿真对照；需考虑输入设计与未开启推理的基线。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "nav-arena",
+      "track": "embodied",
+      "title": "Can Jev Nav / Nav Arena",
+      "url": "https://research.dimensional.org/system-one-navigation/",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Navigation actions from structured spatial state, with broad system comparisons.",
+        "zh": "从结构化空间状态选择导航动作，并比较多套完整系统。"
+      },
+      "scope": {
+        "en": "Main evaluation, short-range subset, representation study, and real-robot demo are different sets.",
+        "zh": "主评测、短程子集、状态表示实验和实机演示属于不同样本。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "code-simulation",
+      "track": "embodied",
+      "title": "Code Owns the Simulation, Jev Owns the Evaluation",
+      "url": "https://arxiv.org/abs/2610.01834",
+      "evidence": [
+        "paper"
+      ],
+      "summary": {
+        "en": "Separate programmatic skill simulation from language-conditioned skill selection.",
+        "zh": "将程序实现的技能模拟与语言条件下的技能选择分开。"
+      },
+      "scope": {
+        "en": "Changing torque to skills also changes control assistance; this uses a known simulator.",
+        "zh": "从力矩改为技能同时改变控制辅助；所用预测来自已知仿真器。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "jev-libero",
+      "track": "embodied",
+      "title": "jev-libero",
+      "url": "https://github.com/Dimweaker/jev-libero",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Use short branch simulations to choose intent, action family, and atomic input.",
+        "zh": "利用短时分支仿真，依次选择意图、动作类别与原子输入。"
+      },
+      "scope": {
+        "en": "Passing examples are not a standard LIBERO benchmark score or a learned world-model result.",
+        "zh": "通过示例不等于标准 LIBERO 成绩，也不等于学习型世界模型结果。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "embodied-jev",
+      "track": "embodied",
+      "title": "EmbodiedJev",
+      "url": "https://github.com/FBddcz/embodied-jev",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Combine visual planning with local direction and gripper decisions.",
+        "zh": "将视觉规划与局部方向、夹爪判断组合。"
+      },
+      "scope": {
+        "en": "Small development runs; track object progress as well as end-effector motion.",
+        "zh": "少量开发运行；应同时检查物体进展与末端运动。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Local source review at f08de2e4e20d6cd69fea9c57ac1062c3ef510f1e; linked upstream may evolve"
+    },
+    {
+      "id": "robojev",
+      "track": "embodied",
+      "title": "RoboJEV",
+      "url": "https://github.com/lykycy123/RoboJEV",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Two-stage intent and XYZ/gripper selection in MuJoCo manipulation.",
+        "zh": "在 MuJoCo 操作任务中进行意图与 XYZ/夹爪两级选择。"
+      },
+      "scope": {
+        "en": "The reported rule baseline completes more tasks; whole-arm feasibility remains a control concern.",
+        "zh": "作者报告中规则完成数更高；整臂可行性仍需控制层检查。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Local source review at 2c920c29e5e76cc57908b3c05907d7c5d91565c1; linked upstream may evolve"
+    },
+    {
+      "id": "roboicl",
+      "track": "embodied",
+      "title": "RoboICL — Jev action-reuse study",
+      "url": "https://arxiv.org/abs/2609.34261",
+      "evidence": [
+        "paper"
+      ],
+      "summary": {
+        "en": "Decide whether to reuse the remaining action suffix or regenerate it.",
+        "zh": "判断继续复用剩余动作，还是重新生成。"
+      },
+      "scope": {
+        "en": "Jev substudy: two development tasks, five layouts each; main-framework videos are separate.",
+        "zh": "Jev 子实验为两项开发任务、各五个布局；主框架视频应分开解读。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "depthjev",
+      "track": "embodied",
+      "title": "GeoLingo (formerly DepthJev)",
+      "url": "https://github.com/ZJUCQR/GeoLingo",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Translate metric depth and object detections into text facts for Jev navigation decisions.",
+        "zh": "将度量深度与目标检测结果转为文本事实，由 Jev 选择导航动作。"
+      },
+      "scope": {
+        "en": "Author-reported 300-episode EB-Navigation evaluation; target-type errors are prominent on visual-appearance tasks.",
+        "zh": "作者报告的 300 回合 EB-Navigation 评测；视觉外观任务中的目标类型判断仍有较多错误。"
+      },
+      "reviewed_on": "2026-10-29",
+      "source_snapshot": "GeoLingo README reviewed 2026-10-29; renamed from DepthJev. Results cover 300 EB-Navigation episodes, with target type correct on 25/60 visual-appearance cases."
+    },
+    {
+      "id": "xarm",
+      "track": "embodied",
+      "title": "jev-robotic-arm-benchmark",
+      "url": "https://github.com/Dililianxice/jev-robotic-arm-benchmark",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Compare Jev, a structured LLM selector, and rules through the same xArm interface.",
+        "zh": "通过相同 xArm 接口比较 Jev、结构化 LLM 选择器和规则。"
+      },
+      "scope": {
+        "en": "Three nearby starts and 16 paired probes; API waiting pauses simulation.",
+        "zh": "三个近邻初态与 16 对请求；API 等待时仿真暂停。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Published records at c1f19529198651cb066a6ad924a1b89cdd27be4d"
+    },
+    {
+      "id": "arm-lab",
+      "track": "embodied",
+      "title": "jev-arm-lab",
+      "url": "https://github.com/Vankleben/jev-arm-lab",
+      "evidence": [
+        "project"
+      ],
+      "summary": {
+        "en": "Study skill choice and the mismatch between grasp judgments and physical attachment.",
+        "zh": "研究技能选择，以及抓稳判断与真实持有状态的偏差。"
+      },
+      "scope": {
+        "en": "Decision events within one episode are correlated, not independent task trials.",
+        "zh": "同一回合内的判断事件相关，不能当作独立任务样本。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Published failure logs at 1c12c89d7b4d5ad3ad866fc05992caeffc1299c5"
+    },
+    {
+      "id": "robots-world",
+      "track": "embodied",
+      "title": "Robots World",
+      "url": "https://github.com/DanMcInerney/robots-world",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Explore state aging, tracking, and feedback while the environment keeps moving.",
+        "zh": "探索环境持续运动时的状态过期、追踪和反馈。"
+      },
+      "scope": {
+        "en": "Small trials and post-hoc criteria must remain distinguishable.",
+        "zh": "小规模试验与事后判定标准需要明确区分。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "jev-drone",
+      "track": "embodied",
+      "title": "jev-drone",
+      "url": "https://github.com/RomanSlack/jev-drone",
+      "evidence": [
+        "project",
+        "demo"
+      ],
+      "summary": {
+        "en": "Separate slower semantic decisions from faster flight control and constraints.",
+        "zh": "将较慢语义判断与较快飞行控制、约束检查分层。"
+      },
+      "scope": {
+        "en": "Simulation; architecture frequencies are project settings, not general Jev guarantees.",
+        "zh": "仿真项目；架构频率是项目设置，不是 Jev 的通用性能保证。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "jev-wam",
+      "track": "embodied",
+      "title": "jev-wam",
+      "url": "https://github.com/Alpha-Harper-Franklin/jev-wam",
+      "evidence": [
+        "proposal"
+      ],
+      "summary": {
+        "en": "Propose choosing between plan reuse, observation, and expensive prediction.",
+        "zh": "提出在计划复用、补充观察与昂贵预测之间选择。"
+      },
+      "scope": {
+        "en": "Design-stage material in the reviewed snapshot, without completed integration results.",
+        "zh": "所审阅版本处于设计阶段，尚无完成集成后的效果结果。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "closed-loop-vla",
+      "track": "embodied",
+      "title": "Awesome Closed-Loop VLA",
+      "url": "https://github.com/ZJU-OmniAI/Awesome-Closed-Loop-VLA",
+      "evidence": [
+        "background"
+      ],
+      "summary": {
+        "en": "A three-loop framework for execution, prediction, and learning.",
+        "zh": "执行、预测与学习三个闭环的统一框架。"
+      },
+      "scope": {
+        "en": "Conceptual connection; the surveyed methods do not all use Jev.",
+        "zh": "概念关联；综述中的方法并非都使用 Jev。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "README at cd9f6a93650192b1c0a9e40ee6ab2e634eb23d56"
+    },
+    {
+      "id": "world-model",
+      "track": "embodied",
+      "title": "Awesome World Model",
+      "url": "https://github.com/ZJU-OmniAI/Awesome-World-Model",
+      "evidence": [
+        "background"
+      ],
+      "summary": {
+        "en": "World-model foundations, executability, and evaluation resources.",
+        "zh": "世界模型基础、动作可执行性与评测资源。"
+      },
+      "scope": {
+        "en": "Resource index; not a Jev world-model implementation.",
+        "zh": "资源索引；不是 Jev 世界模型实现。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "README at 457ec4665a88f4d8cd2ff2b1afd5ed94d3d2462e"
+    },
+    {
+      "id": "vjepa2",
+      "track": "embodied",
+      "title": "V-JEPA 2",
+      "url": "https://arxiv.org/abs/2506.09985",
+      "evidence": [
+        "background",
+        "paper"
+      ],
+      "summary": {
+        "en": "Action-conditioned latent prediction provides a reference for learned planning models.",
+        "zh": "动作条件潜空间预测为学习型规划模型提供参考。"
+      },
+      "scope": {
+        "en": "No Jev integration is established by this paper.",
+        "zh": "该论文没有验证与 Jev 的联合方案。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    },
+    {
+      "id": "libero",
+      "track": "embodied",
+      "title": "LIBERO",
+      "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "evidence": [
+        "background",
+        "project"
+      ],
+      "summary": {
+        "en": "Robot manipulation environment and task suites used by several examples.",
+        "zh": "多个案例使用的机器人操作环境与任务套件。"
+      },
+      "scope": {
+        "en": "A custom task subset is not the official suite evaluation.",
+        "zh": "自定义任务子集不等同于官方完整套件评测。"
+      },
+      "reviewed_on": "2026-10-26",
+      "source_snapshot": "Public sources reviewed for the September–October 2026 research notes"
+    }
+  ]
+}

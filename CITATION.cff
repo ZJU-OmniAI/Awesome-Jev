@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Please cite this repository when using its original taxonomy and summaries, and cite the original authors for their work."
+title: "Awesome Jev: Model Foundations, Agent Applications, and Embodied Intelligence"
+type: dataset
+authors:
+  - given-names: "Jiahao"
+    family-names: "Chen"
+    website: "https://github.com/ajackchan"
+  - family-names: "Acceleter"
+    website: "https://github.com/Acceleter"
+  - given-names: "Lizhou"
+    family-names: "Liang"
+    website: "https://github.com/llz1515"
+  - family-names: "KagaKouk0"
+    website: "https://github.com/KagaKouk0"
+version: 0.1.0
+date-released: 2026-10-29
+url: "https://github.com/ZJU-OmniAI/Awesome-Jev"
+license: Apache-2.0
+keywords:
+  - Jev
+  - System One
+  - structured decisions
+  - agents
+  - embodied intelligence
+  - world models

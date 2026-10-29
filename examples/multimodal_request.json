@@ -1,0 +1,42 @@
+{
+  "model": "jev-1.14.0",
+  "state": {
+    "photo": "9c8d3460-fcd3-4cb7-9b4e-59a0c083510e",
+    "task": "Inspect the nearest mug on the table before attempting a pick."
+  },
+  "assets": {
+    "9c8d3460-fcd3-4cb7-9b4e-59a0c083510e": {
+      "type": "image",
+      "part": "scene-photo"
+    }
+  },
+  "questions": {
+    "mug_visible": {
+      "type": "noul",
+      "instructions": "A mug is visible in `photo`."
+    },
+    "mug_color": {
+      "type": "choice",
+      "instructions": "What is the color of the nearest mug in `photo`?",
+      "criteria": {
+        "red": "Red",
+        "blue": "Blue",
+        "other": "Another color",
+        "unknown": "No mug is visible or its color cannot be determined."
+      }
+    },
+    "visibility": {
+      "type": "score",
+      "instructions": "How clearly is the nearest mug visible in `photo`?",
+      "criteria": [
+        "No mug can be identified",
+        "Only part of the mug is visible",
+        "The whole mug is clearly visible"
+      ]
+    },
+    "mug_box": {
+      "type": "box",
+      "instructions": "The entire nearest mug on the table in `photo`."
+    }
+  }
+}

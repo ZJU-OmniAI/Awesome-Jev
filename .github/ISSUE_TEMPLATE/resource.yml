@@ -1,0 +1,34 @@
+name: Suggest a resource / 推荐资源
+description: Add a paper, project, benchmark, or reproducible case.
+title: "[Resource] "
+body:
+  - type: dropdown
+    id: track
+    attributes:
+      label: Primary track / 主要方向
+      options:
+        - Model foundations / 模型基础
+        - Agent applications / Agent 应用
+        - Embodied intelligence / 具身智能
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL / 一手来源
+    validations:
+      required: true
+  - type: textarea
+    id: role
+    attributes:
+      label: What does Jev receive and decide? / Jev 收到什么、判断什么？
+      description: For background work, explain the connection instead.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limits / 证据及范围
+      description: Identify real calls, mocks, evaluation protocol, and sample size where applicable.
+    validations:
+      required: true
