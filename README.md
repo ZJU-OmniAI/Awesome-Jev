@@ -6,6 +6,21 @@
 >
 > Connecting typed judgments with state representation, action selection, and execution feedback.
 
+<a id="report-pdf"></a>
+## Jev Research · Full Report
+
+**[Read online](reports/Jev-Research.pdf) · [Download PDF](reports/Jev-Research.pdf?raw=true)**
+
+72 pages · Chinese · Model mechanisms, agent applications, and embodied intelligence
+
+<p align="center">
+  <a href="reports/Jev-Research.pdf">
+    <img src="assets/jev-research-cover.png" alt="Jev Research report cover; click to read the full PDF" width="640">
+  </a>
+</p>
+
+---
+
 <p align="center">
   <img src="assets/overview.svg" alt="Jev research map: model foundations, software agents, and embodied intelligence share a state–decision–execution–feedback loop" width="100%">
 </p>
@@ -22,6 +37,7 @@
 
 ## Contents
 
+- [Full report PDF](#report-pdf)
 - [Introduction](#introduction)
 - [Research scope](#scope)
 - [Taxonomy](#three-directions)
@@ -208,6 +224,8 @@ The [research roadmap](docs/roadmap.md) describes falsifiable experiments across
 
 ```text
 README.md / README_zh.md       Bilingual overview and generated resource tables
+reports/Jev-Research.pdf       Full Jev Research report (Chinese, 72 pages)
+assets/jev-research-cover.png  Report cover preview
 assets/overview.svg           Original vector overview
 docs/report.md / report_zh.md  Bilingual technical survey
 docs/                         Topic guides, evaluation, and research roadmap

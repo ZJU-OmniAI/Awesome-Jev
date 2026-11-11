@@ -6,6 +6,21 @@
 >
 > 从类型化判断出发，梳理状态表示、动作选择与执行反馈之间的关系。
 
+<a id="report-pdf"></a>
+## Jev Research · 完整报告
+
+**[在线阅读](reports/Jev-Research.pdf) · [下载 PDF](reports/Jev-Research.pdf?raw=true)**
+
+72 页 · 中文 · 模型机制、Agent 应用与具身智能
+
+<p align="center">
+  <a href="reports/Jev-Research.pdf">
+    <img src="assets/jev-research-cover.png" alt="Jev 调研报告封面，点击阅读完整 PDF" width="640">
+  </a>
+</p>
+
+---
+
 <p align="center">
   <img src="assets/overview_zh.svg" alt="Jev 研究总览：模型基础、Agent 应用与具身智能共享状态、判断、执行和反馈闭环" width="100%">
 </p>
@@ -22,6 +37,7 @@
 
 ## 目录
 
+- [完整报告 PDF](#report-pdf)
 - [简介](#introduction)
 - [研究范围](#scope)
 - [技术分类](#three-directions)
@@ -208,6 +224,8 @@ flowchart LR
 
 ```text
 README.md / README_zh.md       双语总览与自动生成的资源表
+reports/Jev-Research.pdf       Jev Research 完整报告（中文，72 页）
+assets/jev-research-cover.png  报告封面预览
 assets/overview.svg           原创矢量总览图
 docs/report_zh.md / report.md  双语技术综述
 docs/                         专题导读、评测与研究路线
